@@ -1,0 +1,80 @@
+﻿{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "sim:check-tools",
+      "type": "shell",
+      "command": "iverilog -V; vvp -V",
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "sim:ez:build",
+      "type": "shell",
+      "command": "New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_ez.vvp testbench_ez.v picorv32.v",
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "sim:ez:run",
+      "type": "shell",
+      "command": "vvp -N .sim/testbench_ez.vvp",
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "dependsOn": [
+        "sim:ez:build"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "sim:ez:vcd",
+      "type": "shell",
+      "command": "vvp -N .sim/testbench_ez.vvp +vcd",
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "dependsOn": [
+        "sim:ez:build"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "sim:ez:wave",
+      "type": "shell",
+      "command": "gtkwave testbench.vcd",
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "dependsOn": [
+        "sim:ez:vcd"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "sim:std:test_vcd",
+      "type": "shell",
+      "command": "make test_vcd TOOLCHAIN_PREFIX=${input:toolchainPrefix}",
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "toolchainPrefix",
+      "type": "promptString",
+      "description": "RISC-V toolchain prefix, e.g. riscv64-unknown-elf-",
+      "default": "riscv64-unknown-elf-"
+    }
+  ]
+}

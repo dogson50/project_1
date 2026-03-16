@@ -1,0 +1,9 @@
+I: 32, 32, 1
+L0: C, 5, 5, 6, tanh
+L1: S, 2, 2
+L2: C, 5, 5, 16, tanh
+L3: S, 2, 2
+L4: STRIP, 400
+L5: FC, 400, 120, tanh, dropout
+L6: FC, 120, 84, tanh, dropout
+L7: FC, 84, 10, sigmoid

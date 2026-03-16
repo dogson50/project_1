@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "9a47a72c57497c62",
+    "type": "split",
+    "children": [
+      {
+        "id": "17be1c094e5a0094",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "df6591b05a15fdcd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SOC框架/SOC总架构图.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SOC总架构图"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8abe0649a8dd3af4",
+    "type": "split",
+    "children": [
+      {
+        "id": "a6f8f4ef06950ed6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec4175781a619937",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "33fcc07c8e0650eb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "1ab59c21b5821a3c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "f9190a0a297eed9b",
+    "type": "split",
+    "children": [
+      {
+        "id": "62732e447643e617",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20603e7699807a98",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "未命名.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "未命名 的反向链接列表"
+            }
+          },
+          {
+            "id": "eb11635ccd160b62",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "未命名.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "未命名 的出链列表"
+            }
+          },
+          {
+            "id": "a96b53582d129427",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "1dea82b10ee0a28a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "2d4b599c8b77e53d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "未命名.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "未命名 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "df6591b05a15fdcd",
+  "lastOpenFiles": [
+    "SOC框架/picorv32_axi.md",
+    "SOC框架/SOC总架构图.md",
+    "SOC框架/AXI Interconnect.md",
+    "SOC框架/AXI DMA.md",
+    "SOC框架/AXI-Lite CSR.md",
+    "SOC框架/DDR + Ctrl.md",
+    "SOC框架/IRQ Ctrl.md",
+    "SOC框架/NPU.md",
+    "SOC框架/未命名 1.md",
+    "未命名",
+    "SOC框架",
+    "SOC的架构图.canvas",
+    "2026-03-15.md",
+    "欢迎.md",
+    "未命名 2.md",
+    "未命名 2.canvas",
+    "未命名 1",
+    "未命名.base",
+    "未命名 1.canvas",
+    "2026-03-13.md",
+    "创建链接.md"
+  ]
+}
