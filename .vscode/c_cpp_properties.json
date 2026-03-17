@@ -1,0 +1,35 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Windows-Host",
+            "intelliSenseMode": "windows-gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "includePath": [
+                "${workspaceFolder}/picorv32-main/picorv32-main/firmware/**",
+                "${workspaceFolder}/picorv32-main/picorv32-main/tests/**",
+                "${workspaceFolder}/picorv32-main/picorv32-main/**"
+            ],
+            "defines": [
+                "__riscv",
+                "PICOSOC"
+            ]
+        },
+        {
+            "name": "WSL-RISCV",
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "includePath": [
+                "${workspaceFolder}/picorv32-main/picorv32-main/firmware/**",
+                "${workspaceFolder}/picorv32-main/picorv32-main/tests/**",
+                "${workspaceFolder}/picorv32-main/picorv32-main/**"
+            ],
+            "defines": [
+                "__riscv",
+                "PICOSOC"
+            ]
+        }
+    ]
+}

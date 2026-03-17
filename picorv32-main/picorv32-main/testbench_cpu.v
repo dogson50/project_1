@@ -22,6 +22,9 @@ module testbench_cpu;
 	integer i;
 	integer max_cycles;
 	integer cycle_counter;
+	reg ignore_exit;
+	reg ignore_trap;
+	reg trap_reported;
 
 	always #5 clk = ~clk;
 
@@ -61,6 +64,15 @@ module testbench_cpu;
 			// Keep default max_cycles.
 		end
 
+		ignore_exit = $test$plusargs("ignore_exit");
+		ignore_trap = $test$plusargs("ignore_trap");
+		trap_reported = 1'b0;
+
+		if (ignore_exit)
+			$display("[TB] +ignore_exit enabled");
+		if (ignore_trap)
+			$display("[TB] +ignore_trap enabled");
+
 		if ($test$plusargs("vcd")) begin
 			$dumpfile("testbench_cpu.vcd");
 			$dumpvars(0, testbench_cpu);
@@ -82,8 +94,13 @@ module testbench_cpu;
 		end
 
 		if (resetn && trap) begin
-			$display("[TB] CPU trap at cycle %0d", cycle_counter);
-			$finish;
+			if (!ignore_trap) begin
+				$display("[TB] CPU trap at cycle %0d", cycle_counter);
+				$finish;
+			end else if (!trap_reported) begin
+				$display("[TB] CPU trap at cycle %0d (ignored)", cycle_counter);
+				trap_reported <= 1'b1;
+			end
 		end
 	end
 
@@ -112,7 +129,10 @@ module testbench_cpu;
 						$display("\n[TB] PASS (exit code 0) at cycle %0d", cycle_counter);
 					else
 						$display("\n[TB] FAIL (exit code %0d) at cycle %0d", mem_wdata, cycle_counter);
-					$finish;
+					if (!ignore_exit)
+						$finish;
+					else
+						$display("[TB] MMIO exit ignored, continue simulation");
 				end
 			end else begin
 				mem_ready <= 1'b1;

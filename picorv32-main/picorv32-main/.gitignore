@@ -28,6 +28,7 @@
 /testbench_synth.vvp
 /testbench.gtkw
 /testbench.vcd
+/testbench_cpu.vcd
 /testbench.trace
 /testbench_verilator*
 /check.smt2

@@ -1,0 +1,17 @@
+# Vivado generated files
+.Xil/
+project_1.cache/
+project_1.hw/
+project_1.ip_user_files/
+project_1.sim/
+*.jou
+*.log
+*.str
+
+# Icarus/GTKWave generated files
+picorv32-main/picorv32-main/.sim/
+picorv32-main/picorv32-main/*.vcd
+
+# Backup artifacts
+*.backup.jou
+*.backup.log
