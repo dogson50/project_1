@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SOC框架/SOC总架构图.md",
+                "file": "SOC框架/picorv32_axi.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SOC总架构图"
+              "title": "picorv32_axi"
             }
           }
         ]
@@ -185,14 +185,14 @@
   },
   "active": "df6591b05a15fdcd",
   "lastOpenFiles": [
-    "SOC框架/picorv32_axi.md",
     "SOC框架/SOC总架构图.md",
+    "SOC框架/picorv32_axi.md",
+    "SOC框架/NPU.md",
+    "SOC框架/IRQ Ctrl.md",
+    "SOC框架/DDR + Ctrl.md",
+    "SOC框架/AXI-Lite CSR.md",
     "SOC框架/AXI Interconnect.md",
     "SOC框架/AXI DMA.md",
-    "SOC框架/AXI-Lite CSR.md",
-    "SOC框架/DDR + Ctrl.md",
-    "SOC框架/IRQ Ctrl.md",
-    "SOC框架/NPU.md",
     "SOC框架/未命名 1.md",
     "未命名",
     "SOC框架",
