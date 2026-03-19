@@ -1,198 +1,198 @@
-# Heterogeneous CPU+NPU Contest Plan
+# 异构CPU+NPU竞赛方案
 
-Last updated: 2026-03-18
+最后更新：2026-03-18
 
-## 1. Problem Understanding
+## 1. 问题理解
 
-This project targets a low-power heterogeneous processor based on 32-bit CPU + 32-bit NPU, connected by AXI interconnect.
-The core requirement is to deliver:
+本项目面向基于32位CPU + 32位NPU的低功耗异构处理器，通过AXI互联网络连接。
+核心交付要求包括：
 
-- CPU/NPU collaborative execution.
-- AXI-Lite single-beat control path + AXI burst data path.
-- Zero-copy style data flow (CPU for control, NPU for compute, DMA for movement).
-- Verifiable performance, bandwidth utilization, and power-saving features.
+- CPU/NPU协作执行。
+- AXI-Lite单拍控制路径 + AXI突发数据路径。
+- 零拷贝风格的数据流（CPU负责控制，NPU负责计算，DMA负责数据移动）。
+- 可验证的性能、带宽利用率和功耗节省特性。
 
-## 2. Project Goals
+## 2. 项目目标
 
-### 2.1 Mandatory Goals
+### 2.1 强制性目标
 
-1. Integrate a 4x4 systolic-array NPU into a designated 32-bit CPU platform.
-2. Implement AXI communication between CPU and NPU:
-- AXI-Lite for control/status.
-- AXI burst for high-throughput data transfer.
-3. Pass functional verification:
-- AXI burst incrementing-address correctness.
-- CPU controls logic, NPU executes matrix operations.
-- RTL simulation flow with at least 95% code-path coverage target.
-4. Reach baseline performance targets:
-- NPU peak >= 0.5 TOPS @ INT8.
-- Burst-scene bus bandwidth utilization >= 60%.
-5. Implement low-power clock-gating:
-- Disable systolic-array clock when NPU is idle.
+1. 将4x4脉动阵列NPU集成到指定的32位CPU平台。
+2. 实现CPU和NPU之间的AXI通信：
+- AXI-Lite用于控制/状态。
+- AXI突发用于高吞吐量数据传输。
+3. 通过功能验证：
+- AXI突发递增地址正确性。
+- CPU控制逻辑，NPU执行矩阵操作。
+- RTL仿真流程，代码路径覆盖率目标至少95%。
+4. 达到基线性能目标：
+- NPU峰值 >= 0.5 TOPS @ INT8。
+- 突发场景总线带宽利用率 >= 60%。
+5. 实现低功耗时钟门控：
+- NPU空闲时禁用脉动阵列时钟。
 
-### 2.2 Optimization Goals
+### 2.2 优化目标
 
-1. NPU peak target stretch: approach/exceed 1 TOPS @ INT8.
-2. Burst bandwidth utilization stretch: >= 80%.
-3. Dynamic systolic-array configurability (PE connectivity reconfiguration).
-4. AXI shared-bus topology with higher parallel access capability.
-5. DMA integration enhancement to reduce CPU data-move overhead.
-6. DFS (dynamic frequency scaling) for NPU.
-7. Explore additional low-power methods:
-- Power gating.
-- Multi-voltage domains.
-8. AXI interface standardization and reusability.
+1. NPU峰值目标扩展：达到/超过1 TOPS @ INT8。
+2. 突发带宽利用率扩展：>= 80%。
+3. 动态脉动阵列可配置性（PE连接重构）。
+4. AXI共享总线拓扑，具有更高的并行访问能力。
+5. DMA集成增强，降低CPU数据移动开销。
+6. NPU的DFS（动态频率缩放）。
+7. 探索其他低功耗方法：
+- 功率门控。
+- 多电压域。
+8. AXI接口标准化和可重用性。
 
-## 3. Deliverables
+## 3. 可交付成果
 
-1. Detailed design documentation.
-2. RTL code.
-3. RTL simulation report and/or FPGA validation report.
-4. Functional test cases, stress tests, boundary tests, and metric logs.
-5. Scoring evidence package (mapping feature -> score item).
+1. 详细的设计文档。
+2. RTL代码。
+3. RTL仿真报告和/或FPGA验证报告。
+4. 功能测试用例、压力测试、边界测试和度量日志。
+5. 评分证明包（将特性映射到评分项）。
 
-## 4. Architecture Plan
+## 4. 架构方案
 
-## 4.1 High-Level Partition
+## 4.1 高层分割
 
-1. CPU subsystem:
-- Task scheduling.
-- CSR programming.
-- Interrupt handling.
-2. AXI interconnect subsystem:
-- AXI-Lite control path.
-- AXI burst data path.
-3. DMA subsystem:
-- DDR <-> NPU data movement.
-- Burst transaction generation.
-4. NPU subsystem:
-- 4x4 systolic array.
-- Matrix operation pipeline.
-- Busy/done/error reporting.
-5. Power-management subsystem:
-- Clock gate controller.
-- DFS control hooks.
+1. CPU子系统：
+- 任务调度。
+- CSR编程。
+- 中断处理。
+2. AXI互联子系统：
+- AXI-Lite控制路径。
+- AXI突发数据路径。
+3. DMA子系统：
+- DDR <-> NPU数据移动。
+- 突发事务生成。
+4. NPU子系统：
+- 4x4脉动阵列。
+- 矩阵操作流水线。
+- 忙碌/完成/错误报告。
+5. 功率管理子系统：
+- 时钟门控制器。
+- DFS控制钩子。
 
-### 4.2 Data and Control Planes
+### 4.2 数据和控制平面
 
-1. Control plane:
-- CPU writes CSR (src/dst/len/mode/start).
-- CPU reads status/IRQ.
-2. Data plane:
-- DMA and NPU use burst transfers.
-- Minimize data copies via direct memory transactions.
+1. 控制平面：
+- CPU写CSR（src/dst/len/mode/start）。
+- CPU读状态/IRQ。
+2. 数据平面：
+- DMA和NPU使用突发传输。
+- 通过直接内存事务最小化数据拷贝。
 
-## 5. Verification and Test Plan
+## 5. 验证和测试方案
 
-## 5.1 Functional Verification
+## 5.1 功能验证
 
-1. RTL simulation is mandatory.
-2. Test categories:
-- Basic function tests.
-- AXI single-beat and burst protocol tests.
-- CPU-NPU collaboration tests.
-- Stress tests.
-- Boundary-condition tests.
-3. Coverage target:
-- >= 95% code-path coverage in joint simulation platform.
+1. RTL仿真是强制性的。
+2. 测试类别：
+- 基本功能测试。
+- AXI单拍和突发协议测试。
+- CPU-NPU协作测试。
+- 压力测试。
+- 边界条件测试。
+3. 覆盖率目标：
+- 联合仿真平台中代码路径覆盖率 >= 95%。
 
-### 5.2 Performance Verification
+### 5.2 性能验证
 
-1. NPU throughput estimation and measurement:
-- TOPS @ INT8 (peak).
-2. Bus efficiency:
-- Burst bandwidth utilization.
-3. AI inference workload:
-- MNIST and/or CIFAR-10.
-- Record inference latency and accuracy.
+1. NPU吞吐量估计和测量：
+- TOPS @ INT8（峰值）。
+2. 总线效率：
+- 突发带宽利用率。
+3. AI推理工作负载：
+- MNIST和/或CIFAR-10。
+- 记录推理延迟和准确度。
 
-### 5.3 Power Verification
+### 5.3 功耗验证
 
-1. Measure power under multiple workloads.
-2. Compare:
-- Clock-gating on/off.
-- DFS modes.
-3. Record power-performance trade-off curves.
+1. 在多个工作负载下测量功耗。
+2. 比较：
+- 时钟门控开/关。
+- DFS模式。
+3. 记录功耗-性能权衡曲线。
 
-### 5.4 FPGA Validation
+### 5.4 FPGA验证
 
-1. Base requirement: RTL simulation completion.
-2. Bonus target: FPGA validation to gain extra score.
+1. 基本要求：RTL仿真完成。
+2. 奖励目标：FPGA验证以获得额外分数。
 
-## 6. Score-Oriented Work Breakdown
+## 6. 以评分为导向的工作分解
 
-1. 4x4 systolic array implementation (20 points baseline).
-2. Optional dynamic systolic array (25 points path).
-3. AXI shared-bus interconnect (5 points).
-4. DMA controller (5 points).
-5. Low-power design: clock gating / DFS (5 points).
-6. Documentation quality and modular design clarity (10 points).
-7. Performance optimization score:
-- Baseline metrics define zero line.
-- Linear score growth toward optimization targets.
-- Maximum in this section: 50 points.
-8. FPGA validation bonus: +10 points.
+1. 4x4脉动阵列实现（20分基线）。
+2. 可选动态脉动阵列（25分路径）。
+3. AXI共享总线互联（5分）。
+4. DMA控制器（5分）。
+5. 低功耗设计：时钟门控 / DFS（5分）。
+6. 文档质量和模块化设计清晰度（10分）。
+7. 性能优化评分：
+- 基线度量定义零线。
+- 向优化目标线性增长评分。
+- 本部分最高分：50分。
+8. FPGA验证奖励：+10分。
 
-## 7. Milestone Plan
+## 7. 里程碑方案
 
-### M0: Baseline Bring-up
+### M0：基线启动
 
-1. Confirm CPU simulation baseline and firmware flow.
-2. Freeze interface specs for AXI-Lite CSR + AXI burst path.
-3. Define measurable KPI formulas.
+1. 确认CPU仿真基线和固件流程。
+2. 冻结AXI-Lite CSR + AXI突发路径的接口规范。
+3. 定义可测量的KPI公式。
 
-### M1: Functional Integration
+### M1：功能集成
 
-1. Integrate 4x4 NPU core + control/status interface.
-2. Complete AXI-Lite control channel and AXI burst data channel.
-3. Run CPU->NPU collaborative matrix test end-to-end.
+1. 集成4x4 NPU核心 + 控制/状态接口。
+2. 完成AXI-Lite控制通道和AXI突发数据通道。
+3. 端到端运行CPU->NPU协作矩阵测试。
 
-### M2: Verification Closure
+### M2：验证闭合
 
-1. Add burst increment-address correctness suite.
-2. Add stress and corner-case suites.
-3. Reach >=95% code-path coverage goal.
+1. 添加突发递增地址正确性测试套件。
+2. 添加压力和角落案例测试套件。
+3. 达到 >=95% 代码路径覆盖率目标。
 
-### M3: Performance and Power
+### M3：性能和功耗
 
-1. Measure TOPS and bandwidth utilization.
-2. Implement and validate clock gating.
-3. Implement DFS prototype and evaluate gains.
+1. 测量TOPS和带宽利用率。
+2. 实现和验证时钟门控。
+3. 实现DFS原型并评估收益。
 
-### M4: Optimization and Final Package
+### M4：优化和最终包装
 
-1. Attempt 1 TOPS and 80% bandwidth stretch targets.
-2. Complete report set and score-evidence matrix.
-3. Execute FPGA validation if schedule allows.
+1. 尝试1 TOPS和80%带宽扩展目标。
+2. 完成报告集和评分证明矩阵。
+3. 如果进度允许，执行FPGA验证。
 
-## 8. KPI Definitions
+## 8. KPI定义
 
-1. NPU peak TOPS @ INT8:
-- Formula: ops_per_cycle * freq_hz / 1e12.
-2. Bus bandwidth utilization:
-- Formula: effective_payload_bandwidth / theoretical_bandwidth.
-3. Coverage:
-- Covered code paths / total target code paths.
-4. Power-saving ratio:
-- (P_baseline - P_optimized) / P_baseline.
+1. NPU峰值TOPS @ INT8：
+- 公式：ops_per_cycle * freq_hz / 1e12。
+2. 总线带宽利用率：
+- 公式：effective_payload_bandwidth / theoretical_bandwidth。
+3. 覆盖率：
+- 覆盖的代码路径 / 目标代码路径总数。
+4. 功耗节省比率：
+- (P_baseline - P_optimized) / P_baseline。
 
-## 9. Risks and Mitigations
+## 9. 风险和缓解
 
-1. AXI protocol corner-case bugs:
-- Mitigation: protocol assertions + randomized burst tests.
-2. Throughput below target:
-- Mitigation: pipeline balancing, burst length tuning, DMA outstanding tuning.
-3. Coverage shortfall:
-- Mitigation: coverage-driven test generation and gap-focused directed tests.
-4. Power optimization side effects:
-- Mitigation: add wake-up latency and correctness regression tests.
-5. Schedule pressure for FPGA validation:
-- Mitigation: parallelize RTL closure and board bring-up preparation.
+1. AXI协议角落案例错误：
+- 缓解：协议断言 + 随机化突发测试。
+2. 吞吐量低于目标：
+- 缓解：流水线平衡、突发长度调优、DMA未完成调优。
+3. 覆盖率不足：
+- 缓解：覆盖率驱动的测试生成和差距聚焦的有向测试。
+4. 功耗优化副作用：
+- 缓解：添加唤醒延迟和正确性回归测试。
+5. FPGA验证的进度压力：
+- 缓解：并行RTL闭合和电路板启动准备。
 
-## 10. Immediate Next Actions
+## 10. 立即采取的后续行动
 
-1. Freeze AXI register map and transaction timing assumptions.
-2. Define module ownership and interface contracts.
-3. Create first-pass verification matrix (feature -> testcase -> metric -> pass criteria).
-4. Start M0/M1 implementation and continuous regression scripts.
+1. 冻结AXI寄存器映射和事务时序假设。
+2. 定义模块所有权和接口合同。
+3. 创建初版验证矩阵（特性 -> 测试用例 -> 度量 -> 通过标准）。
+4. 启动M0/M1实现和持续回归脚本。
 
