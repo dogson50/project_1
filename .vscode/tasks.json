@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "sim:check-tools",
+      "label": "npu:sim:check-tools",
       "type": "shell",
       "command": "iverilog -V; vvp -V",
       "options": {
@@ -11,24 +11,12 @@
       "problemMatcher": []
     },
     {
-      "label": "sim:ez:build",
+      "label": "run:npu:iverilog:one-click",
       "type": "shell",
-      "command": "New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_ez.vvp testbench_ez.v picorv32.v",
+      "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu.ps1",
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
-      "problemMatcher": []
-    },
-    {
-      "label": "sim:ez:run",
-      "type": "shell",
-      "command": "vvp -N .sim/testbench_ez.vvp",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "dependsOn": [
-        "sim:ez:build"
-      ],
       "group": {
         "kind": "test",
         "isDefault": true
@@ -36,243 +24,103 @@
       "problemMatcher": []
     },
     {
-      "label": "sim:ez:vcd",
+      "label": "run:npu:iverilog:one-click:wave",
       "type": "shell",
-      "command": "vvp -N .sim/testbench_ez.vvp +vcd",
+      "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu.ps1 -Wave",
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
-      "dependsOn": [
-        "sim:ez:build"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "sim:ez:wave",
-      "type": "shell",
-      "command": "gtkwave testbench.vcd",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "dependsOn": [
-        "sim:ez:vcd"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "sim:std:test_vcd",
-      "type": "shell",
-      "command": "make test_vcd TOOLCHAIN_PREFIX=${input:toolchainPrefix}",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "build:firmware:hex",
-      "type": "shell",
-      "command": "make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "sim:cpu:build",
-      "type": "shell",
-      "command": "New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "sim:cpu:selftest",
-      "type": "shell",
-      "command": "vvp -N .sim/testbench_cpu.vvp +selftest_alu +maxcycles=2000",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "dependsOn": [
-        "sim:cpu:build"
-      ],
       "group": "test",
       "problemMatcher": []
     },
     {
-      "label": "sim:cpu:firmware",
+      "label": "run:npu:cluster:iverilog:one-click",
       "type": "shell",
-      "command": "vvp -N .sim/testbench_cpu.vvp +firmware=${input:firmwarePath} +maxcycles=${input:maxCycles}",
+      "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu_cluster.ps1",
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
-      "dependsOn": [
-        "sim:cpu:build"
-      ],
+      "group": "test",
       "problemMatcher": []
     },
     {
-      "label": "build:firmware:hex:win-ui",
+      "label": "run:npu:cluster:iverilog:one-click:wave",
       "type": "shell",
-      "command": "wsl --cd ${input:projectRootWsl}/picorv32-main/picorv32-main make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}",
-      "group": "build",
-      "problemMatcher": []
-    },
-    {
-      "label": "sim:cpu:firmware:win-ui",
-      "type": "shell",
-      "command": "vvp -N .sim/testbench_cpu.vvp +firmware=${input:firmwarePath} +maxcycles=${input:maxCycles}",
+      "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu_cluster.ps1 -Wave",
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
-      "dependsOn": [
-        "build:firmware:hex:win-ui",
-        "sim:cpu:build"
-      ],
       "group": "test",
       "problemMatcher": []
     },
     {
-      "label": "sim:cpu:selftest:win-ui",
+      "label": "run:npu:vivado:cleanup",
       "type": "shell",
-      "command": "vvp -N .sim/testbench_cpu.vvp +selftest_alu +maxcycles=2000",
-      "options": {
-        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
-      },
-      "dependsOn": [
-        "sim:cpu:build"
-      ],
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "run:cpu:one-click",
-      "type": "shell",
-      "command": "wsl --cd ${input:projectRootWsl}/picorv32-main/picorv32-main make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}; Set-Location \"${workspaceFolder}/picorv32-main/picorv32-main\"; New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v; vvp -N .sim/testbench_cpu.vvp +firmware=${input:firmwarePath} +maxcycles=${input:maxCycles}",
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "run:iverilog:one-click",
-      "type": "shell",
-      "command": "wsl --cd ${input:projectRootWsl}/picorv32-main/picorv32-main make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}; Set-Location \"${workspaceFolder}/picorv32-main/picorv32-main\"; New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v; vvp -N .sim/testbench_cpu.vvp +firmware=${input:firmwarePath} +maxcycles=${input:maxCycles}",
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "run:iverilog:one-click:wave",
-      "type": "shell",
-      "command": "wsl --cd ${input:projectRootWsl}/picorv32-main/picorv32-main make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}; Set-Location \"${workspaceFolder}/picorv32-main/picorv32-main\"; New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v; vvp -N .sim/testbench_cpu.vvp +vcd +firmware=${input:firmwarePath} +maxcycles=${input:maxCycles}; gtkwave testbench_cpu.vcd",
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "run:iverilog:wave:selftest",
-      "type": "shell",
-      "command": "Set-Location \"${workspaceFolder}/picorv32-main/picorv32-main\"; New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v; vvp -N .sim/testbench_cpu.vvp +vcd +selftest_alu +maxcycles=5000; gtkwave testbench_cpu.vcd",
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "run:iverilog:wave:firmware",
-      "type": "shell",
-      "command": "wsl --cd ${input:projectRootWsl}/picorv32-main/picorv32-main make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}; Set-Location \"${workspaceFolder}/picorv32-main/picorv32-main\"; New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v; vvp -N .sim/testbench_cpu.vvp +vcd +firmware=${input:firmwarePath} +maxcycles=${input:maxCycles}; gtkwave testbench_cpu.vcd",
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "run:iverilog:wave:long",
-      "type": "shell",
-      "command": "wsl --cd ${input:projectRootWsl}/picorv32-main/picorv32-main make firmware/firmware.hex TOOLCHAIN_PREFIX=${input:toolchainPrefix}; Set-Location \"${workspaceFolder}/picorv32-main/picorv32-main\"; New-Item -ItemType Directory -Force .sim | Out-Null; iverilog -g2012 -o .sim/testbench_cpu.vvp testbench_cpu.v picorv32.v; vvp -N .sim/testbench_cpu.vvp +vcd +ignore_exit +ignore_trap +firmware=${input:firmwarePath} +maxcycles=${input:maxCyclesLong}; gtkwave testbench_cpu.vcd",
-      "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "run:vivado:one-click:gui",
-      "type": "shell",
-      "command": "\"${input:vivadoCmd}\" -source .vscode/vivado_one_click_sim.tcl -tclargs ${input:firmwarePathVivado} ${input:maxCyclesVivado} firmware gui",
+      "command": "$ErrorActionPreference='SilentlyContinue'; try { Get-Process xsim,xsimk,xelab,xvlog | Stop-Process -Force } catch {}; try { Remove-Item -Recurse -Force \"${workspaceFolder}/picorv32-main/picorv32-main/.sim/xsim_npu\" } catch {}; try { Remove-Item -Recurse -Force \"${workspaceFolder}/picorv32-main/picorv32-main/.sim/xsim_npu_cluster\" } catch {}; exit 0",
       "options": {
         "cwd": "${workspaceFolder}"
       },
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:vivado:one-click:batch",
+      "type": "shell",
+      "command": "\"${input:vivadoCmd}\" -mode batch -source \"${workspaceFolder}/picorv32-main/picorv32-main/sim/NPU/run_vivado_npu.tcl\"",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": [
+        "run:npu:vivado:cleanup"
+      ],
       "group": "test",
       "problemMatcher": []
     },
     {
-      "label": "run:vivado:one-click:batch",
+      "label": "run:npu:vivado:one-click:gui",
       "type": "shell",
-      "command": "\"${input:vivadoCmd}\" -mode batch -source .vscode/vivado_one_click_sim.tcl -tclargs ${input:firmwarePathVivado} ${input:maxCyclesVivado} firmware batch",
+      "command": "\"${input:vivadoCmd}\" -source \"${workspaceFolder}/picorv32-main/picorv32-main/sim/NPU/run_vivado_npu.tcl\" -tclargs gui",
       "options": {
         "cwd": "${workspaceFolder}"
       },
+      "dependsOn": [
+        "run:npu:vivado:cleanup"
+      ],
       "group": "test",
       "problemMatcher": []
     },
     {
-      "label": "run:vivado:selftest:gui",
+      "label": "run:npu:cluster:vivado:one-click:batch",
       "type": "shell",
-      "command": "\"${input:vivadoCmd}\" -source .vscode/vivado_one_click_sim.tcl -tclargs ${input:firmwarePathVivado} 5000 selftest gui",
+      "command": "\"${input:vivadoCmd}\" -mode batch -source \"${workspaceFolder}/picorv32-main/picorv32-main/sim/NPU/run_vivado_npu_cluster.tcl\"",
       "options": {
         "cwd": "${workspaceFolder}"
       },
+      "dependsOn": [
+        "run:npu:vivado:cleanup"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:cluster:vivado:one-click:gui",
+      "type": "shell",
+      "command": "\"${input:vivadoCmd}\" -source \"${workspaceFolder}/picorv32-main/picorv32-main/sim/NPU/run_vivado_npu_cluster.tcl\" -tclargs gui",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": [
+        "run:npu:vivado:cleanup"
+      ],
       "group": "test",
       "problemMatcher": []
     }
   ],
   "inputs": [
     {
-      "id": "projectRootWsl",
-      "type": "promptString",
-      "description": "WSL project root path (example: /mnt/d/FPGA/project_1)",
-      "default": "/mnt/d/FPGA/project_1"
-    },
-    {
-      "id": "toolchainPrefix",
-      "type": "promptString",
-      "description": "RISC-V toolchain prefix, e.g. riscv64-unknown-elf-",
-      "default": "riscv64-unknown-elf-"
-    },
-    {
-      "id": "firmwarePath",
-      "type": "promptString",
-      "description": "Firmware hex path relative to picorv32-main/picorv32-main",
-      "default": "firmware/firmware.hex"
-    },
-    {
-      "id": "maxCycles",
-      "type": "promptString",
-      "description": "Max simulation cycles",
-      "default": "200000"
-    },
-    {
-      "id": "maxCyclesLong",
-      "type": "promptString",
-      "description": "Max simulation cycles for long waveform run",
-      "default": "2000000"
-    },
-    {
       "id": "vivadoCmd",
       "type": "promptString",
-      "description": "Absolute path to vivado launcher (vivado.bat recommended)",
+      "description": "Absolute path to Vivado launcher (vivado.bat)",
       "default": "D:/FPGA/AMD_FPGA_TOOLS/2025.2/Vivado/bin/vivado.bat"
-    },
-    {
-      "id": "firmwarePathVivado",
-      "type": "promptString",
-      "description": "Firmware hex path for Vivado (absolute path recommended)",
-      "default": "picorv32-main/picorv32-main/firmware/firmware.hex"
-    },
-    {
-      "id": "maxCyclesVivado",
-      "type": "promptString",
-      "description": "Max simulation cycles for Vivado run",
-      "default": "200000"
     }
   ]
 }

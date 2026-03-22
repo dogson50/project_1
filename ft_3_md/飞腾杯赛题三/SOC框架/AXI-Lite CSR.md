@@ -1,40 +1,37 @@
-# AXI-Lite CSR
+# AXI-Lite CSR（当前项目用法）
 
-## 作用
-`AXI-Lite CSR` 是控制/状态寄存器模块，提供 CPU 与 NPU/DMA 的软件控制接口。
+## 说明
 
-它只传“小量控制信息”，不传大块特征图/权重数据。
+当前 SoC 没有单独的“通用 CSR 模块”。  
+目前可编程 CSR 主要在 `AXI_DMA.v` 内部实现，CPU 通过 AXI-Lite 访问 DMA 寄存器完成控制。
 
-## 模块关系
+## 访问路径
 
 ```mermaid
 flowchart LR
-    CPU[picorv32_axi] -->|AXI-Lite写配置| CSR[AXI-Lite CSR]
-    CSR --> DMA[AXI DMA]
-    CSR --> NPU[NPU]
-    DMA --> CSR
-    NPU --> CSR
+    CPU[picorv32_axi] -->|AXI-Lite| IC[AXI_Interconnect_2M3S]
+    IC -->|0x4000_xxxx| DMA_CSR[AXI_DMA 内部 CSR]
 ```
 
-## 建议寄存器表（示例）
-| 偏移 | 名称 | 说明 |
-|---|---|---|
-| `0x00` | `CTRL` | bit0:`start` bit1:`soft_reset` |
-| `0x04` | `STATUS` | bit0:`busy` bit1:`done` bit2:`error` |
-| `0x08` | `SRC_ADDR` | 输入数据首地址 |
-| `0x0C` | `DST_ADDR` | 输出数据首地址 |
-| `0x10` | `LEN` | 传输长度（byte） |
-| `0x14` | `MODE` | 模式（conv/mm/pool 等） |
-| `0x18` | `IRQ_EN` | 中断使能 |
-| `0x1C` | `IRQ_STATUS` | 中断状态（W1C） |
+## 当前可用 CSR 空间
 
-## 设计建议
-- `start` 只接受上升沿，硬件自动清零或由软件清零。
-- `done` 由硬件置位，CPU 写 `IRQ_STATUS` 清除。
-- 建议对齐检查：地址/长度非法时置 `error`。
+- 基地址：`0x4000_0000`
+- 窗口大小：`64KB`（`0x4000_0000 ~ 0x4000_FFFF`）
+- 主要寄存器：
+  - `CTRL / STATUS`
+  - `SRC_ADDR / DST_ADDR / BYTE_LEN`
+  - `ERR_CODE`
+  - `PERF_CYCLE / PERF_RDWORDS / PERF_WRWORDS`
+  - `BURST_WORDS`
 
-## 验证要点
-- AXI-Lite 单拍/背靠背写入都能稳定生效。
-- `start -> busy -> done` 状态转换符合预期。
-- `irq_en=0` 不上报中断，`irq_en=1` 正常中断。
+## 语义约定
 
+- `start`、`soft_reset`：`W1P`（写 1 脉冲）
+- `done`、`error`、`irq_pending`：`W1C`（写 1 清除）
+- `busy`：只读状态位
+
+## 下一步扩展建议
+
+- 保持 DMA CSR 地址稳定
+- 为 NPU 预留独立 AXI-Lite CSR 窗口（建议 `0x5000_xxxx`）
+- 统一中断状态位语义，减少软件驱动分支

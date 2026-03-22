@@ -1,8 +1,26 @@
 {
+  "files.eol": "\n",
   "C_Cpp.default.configuration": "Windows-Host",
-  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp.intelliSenseEngine": "default",
+  "workbench.editorAssociations": {
+    "*.md": "default",
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.pdf": "cweijan.officeViewer"
+  },
+  "files.exclude": {
+    "**/.sim": true,
+    "**/*.vcd": true,
+    "**/.Xil": true,
+    "**/project_1.sim": true,
+    "**/project_1.cache": true,
+    "**/project_1.hw": true,
+    "**/project_1.ip_user_files": true
+  },
   "files.associations": {
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "*.md": "markdown",
+    "*.S": "cpp",
+    "*.s": "cpp"
   }
 }

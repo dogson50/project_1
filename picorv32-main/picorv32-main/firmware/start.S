@@ -23,6 +23,17 @@
 
 #include "custom_ops.S"
 
+/*
+ * 本固件的启动/中断总览
+ * --------------------
+ * 1) CPU 复位后先进入 reset_vec，再跳转到 start。
+ * 2) start 才是该裸机镜像的真实程序入口。
+ *    这里没有标准 C runtime 的 crt0 -> main() 启动链。
+ * 3) IRQ/Trap 进入 irq_vec，保存上下文后调用 C 处理函数 irq()
+ *    （定义在 firmware/irq.c）。
+ * 4) start 的演示流程最后会打印 DONE 并执行 ebreak。
+ */
+
 	.section .text
 	.global irq
 	.global hello
@@ -39,9 +50,11 @@
 	.global stats
 
 reset_vec:
-	// no more than 16 bytes here !
+	// 保持复位桩代码尽量短小。
+	// 核心在复位释放后会先跳到这里。
 	picorv32_waitirq_insn(zero)
 	picorv32_maskirq_insn(zero, zero)
+	// 转交给真正的启动流程。
 	j start
 
 
@@ -50,7 +63,11 @@ reset_vec:
 
 .balign 16
 irq_vec:
-	/* save registers */
+	/*
+	 * IRQ/Trap 底层入口：
+	 * 保存机器上下文 -> 调用 C 处理函数 -> 恢复上下文 -> 通过 retirq 返回
+	 * （retirq 在本函数底部）。
+	 */
 
 #ifdef ENABLE_QREGS
 
@@ -175,7 +192,12 @@ irq_vec:
 
 #endif // ENABLE_QREGS
 
-	/* call interrupt handler C function */
+	/*
+	 * 调用 C 中断处理函数：
+	 *   a0 = 已保存寄存器现场的指针
+	 *   a1 = irq/trap 原因位图/类型
+	 * C 函数符号：firmware/irq.c 中的 irq()
+	 */
 
 	lui sp, %hi(irq_stack)
 	addi sp, sp, %lo(irq_stack)
@@ -191,10 +213,10 @@ irq_vec:
 	addi a1, tp, 0
 #endif
 
-	// call to C function
+	// 调用 C 的 IRQ 处理函数。
 	jal ra, irq
 
-	/* restore registers */
+	/* 恢复保存的寄存器并从 IRQ/Trap 返回。 */
 
 #ifdef ENABLE_QREGS
 
@@ -342,6 +364,11 @@ irq_stack:
  **********************************/
 
 start:
+	/*
+	 * 该标签就是固件真实入口。
+	 * 本项目由汇编完全控制启动过程，
+	 * 因此不存在常见宿主程序中的 crt0/main() 启动链。
+	 */
 	/* zero-initialize all registers */
 
 	addi x1, zero, 0
@@ -380,11 +407,11 @@ start:
 	/* set stack pointer */
 	lui sp,(128*1024)>>12
 
-	/* call hello C code */
+	/* 调用 firmware/hello.c 中的 hello() */
 	jal ra,hello
 #endif
 
-	/* running tests from riscv-tests */
+	/* 执行已链接进镜像的 riscv-tests 指令测试。 */
 
 #ifdef ENABLE_RVTST
 #  define TEST(n) \
@@ -454,7 +481,7 @@ start:
 
 	TEST(simple)
 
-	/* set stack pointer */
+	/* 在调用后续 C 函数前重新设置栈指针。 */
 	lui sp,(128*1024)>>12
 
 	/* set gp and tp */
@@ -463,21 +490,21 @@ start:
 	addi tp, gp, 0
 
 #ifdef ENABLE_SIEVE
-	/* call sieve C code */
+	/* 调用 C 侧 sieve() 示例/基准。 */
 	jal ra,sieve
 #endif
 
 #ifdef ENABLE_MULTST
-	/* call multest C code */
+	/* 调用 multest() 验证乘除相关运算。 */
 	jal ra,multest
 #endif
 
 #ifdef ENABLE_STATS
-	/* call stats C code */
+	/* 调用 stats() 进行统计输出。 */
 	jal ra,stats
 #endif
 
-	/* print "DONE\n" */
+	/* 通过内存映射输出口（0x1000_0000）打印 "DONE\n"。 */
 	lui a0,0x10000000>>12
 	addi a1,zero,'D'
 	addi a2,zero,'O'
@@ -494,7 +521,10 @@ start:
 	li a1, 123456789
 	sw a1,0(a0)
 
-	/* trap */
+	/*
+	 * 演示流程结束。
+	 * 通过 ebreak 触发 trap 路径，便于 testbench/模拟器停止并报告完成。
+	 */
 	ebreak
 
 

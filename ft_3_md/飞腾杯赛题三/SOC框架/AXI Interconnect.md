@@ -1,30 +1,42 @@
-# AXI Interconnect
+# AXI Interconnect（当前版本）
 
-## 作用
-AXI Interconnect 是 SoC 的“地址路由器 + 协议桥”，负责把 `picorv32_axi` 发出的 AXI-Lite 访问分发到不同从设备（如 CSR、DMA 控制寄存器）。
+对应文件：`picorv32-main/picorv32-main/HDL_src/AXI_Interconnect_2M3S.v`
 
-在完整系统里，数据面通常还会有一条单独的 AXI 全接口互连，给 DMA/NPU 访问 DDR。
+## 模块定位
 
-## 在本 SoC 中的位置
+`AXI_Interconnect_2M3S` 负责把主设备请求按地址路由到 3 个从设备窗口：
 
-```mermaid
-flowchart LR
-    CPU[picorv32_axi] -->|AXI-Lite| IC[AXI Interconnect]
-    IC --> CSR[AXI-Lite CSR]
-    IC --> DMA[AXI DMA寄存器]
-```
+- `s0` -> Program RAM
+- `s1` -> Data RAM（CPU Port-A）
+- `s2` -> DMA CSR
 
-## 关键功能
-- 地址译码：根据地址前缀选择目标从设备。
-- 通道握手：维持 AXI-Lite 的 `VALID/READY` 握手。
-- 错误返回：非法地址返回 `DECERR/SLVERR`，避免 CPU 卡死。
-- 可扩展：后续可加 UART、Timer、GPIO 的 AXI-Lite 外设窗口。
+## 当前 SoC 实际使用方式
 
-## 建议地址映射（示例）
-- `0x4000_0000 ~ 0x4000_FFFF` -> [[AXI-Lite CSR]]
-- `0x4001_0000 ~ 0x4001_FFFF` -> [[AXI DMA]] 控制寄存器
+- 互连支持 `2 Master`（`m0/m1`），但在当前顶层中只启用 `m0=CPU`
+- `m1` 预留，后续可用于新增主设备
+- DMA 的 Burst 数据通路当前是旁路互连直连 Data RAM Port-B
 
-## 验证要点
-- 同一拍只有一个从设备被选中。
-- 越界地址能正确返回错误响应。
-- 随机读写下 `aw/ar/w/b/r` 通道握手无死锁。
+## 地址译码规则
+
+采用 `BASE/MASK` 命中：
+
+`(addr & MASK) == BASE`
+
+默认参数对应：
+
+- `0x0000_xxxx` -> Program RAM
+- `0x2000_xxxx` -> Data RAM
+- `0x4000_xxxx` -> DMA CSR
+
+## 仲裁和事务模型
+
+- 写通路和读通路各有一个“活跃事务”槽位
+- 支持 `m0/m1` 轮询仲裁（round-robin）
+- 未命中地址走默认响应路径，避免主机死锁
+
+## 验证关注点
+
+- 同时请求时仲裁是否公平
+- 地址命中与端口选通信号是否一致
+- 非法地址访问是否可正常返回
+- 连续读写场景下是否存在握手停滞

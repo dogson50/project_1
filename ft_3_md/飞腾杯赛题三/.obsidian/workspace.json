@@ -11,14 +11,10 @@
             "id": "df6591b05a15fdcd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SOC框架/picorv32_axi.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "picorv32_axi"
+              "title": "新标签页"
             }
           }
         ]
@@ -183,16 +179,31 @@
       "bases:新建数据库": false
     }
   },
-  "active": "df6591b05a15fdcd",
+  "active": "ec4175781a619937",
   "lastOpenFiles": [
-    "SOC框架/SOC总架构图.md",
-    "SOC框架/picorv32_axi.md",
+    "NPU设计/NPU模块接口与控制面定义.md",
+    "NPU设计/NPU子系统模块划分与接口清单.md",
+    "NPU设计/NPU设计启发汇总.md",
+    "SOC框架/image/SOC总架构图/1774095369493.png",
+    "SOC框架/image/SOC总架构图/1774095347897.png",
+    "SOC框架/image/SOC总架构图",
+    "SOC框架/image",
+    "SOC框架/README.md",
+    "SOC框架/npu设计要求.md",
     "SOC框架/NPU.md",
+    "NPU设计/NPU架构图.md",
+    "NPU设计/npu设计要求.md",
+    "NPU设计/NPU.md",
+    "NPU设计",
+    "未命名.md",
+    "SOC框架/image/SOC总架构图/1774011557083.png",
+    "SOC框架/SOC总架构图.md",
+    "SOC框架/AXI DMA.md",
+    "SOC框架/picorv32_axi.md",
     "SOC框架/IRQ Ctrl.md",
     "SOC框架/DDR + Ctrl.md",
     "SOC框架/AXI-Lite CSR.md",
     "SOC框架/AXI Interconnect.md",
-    "SOC框架/AXI DMA.md",
     "SOC框架/未命名 1.md",
     "未命名",
     "SOC框架",
