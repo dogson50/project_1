@@ -6,6 +6,7 @@
 - PicoRV32 AXI SoC（已有基础互连、RAM、DMA 模块）
 - `npu_core_tile_4x4`（4x4 脉动阵列 tile，`SIMD_PER_PE` 可参数化）
 - `npu_core_cluster`（多 tile 并行簇）
+- `npu_csr_if`（AXI-Lite CSR 终端，已落地 `W1P/W1C`、配置寄存器与性能镜像读出）
 - Icarus/Vivado 一键仿真入口（已统一到 NPU 方向）
 
 根工程文件：`project_1.xpr`
@@ -17,12 +18,15 @@
   - `NPU_design/npu_pe.v`：单个 PE（支持 SIMD 并行 lane）
   - `NPU_design/npu_core_tile_4x4.v`：16 PE 组成的 4x4 tile
   - `NPU_design/npu_core_cluster.v`：多 tile 并行封装
+  - `NPU_design/npu_csr_if.v`：NPU 控制面 CSR 终端（AXI-Lite / W1P / W1C / PERF）
   - 其余 AXI SoC 相关模块（`AXI_*`, `picorv32_AXI_SOC.v`）
 
 - `picorv32-main/picorv32-main/sim/NPU`
   - `tb_npu_core_tile_4x4.v`：tile 自检 testbench（PASS/FAIL）
   - `tb_npu_core_cluster.v`：cluster 自检 testbench（PASS/FAIL）
+  - `tb_npu_csr_if.v`：CSR 接口自检 testbench（PASS/FAIL）
   - `run_iverilog_npu*.ps1`：Icarus 一键脚本
+  - `run_iverilog_npu_csr.sh`：CSR Linux 一键脚本
   - `run_vivado_npu*.tcl`：Vivado 一键脚本
   - `README.md`：NPU 仿真子说明
 
@@ -46,6 +50,14 @@
 - 每个 tile 独立 `in_valid/clear_acc`
 - 输出按 tile 拼接，便于调度器后续接入
 
+### 2.3 `npu_csr_if`
+
+- 实现冻结版 CSR 地址映射：`0x00 ~ 0x50`
+- 支持 `start/soft_reset` 单拍脉冲（`W1P`）
+- 支持 `done/error/irq_pending` 清除请求（`W1C`）
+- 读出 `ERR_CODE`、`PERF_*`、`CAPABILITY`、`VERSION`
+- 当前作为独立控制面子模块落地，`busy 重入 start` 的错误判定仍由后级 `npu_cmd_ctrl` 负责
+
 ## 3. 仿真说明
 
 当前 testbench 均为“自检式”：
@@ -59,6 +71,13 @@
   - 两个 tile 并行输入不同数据
   - 分别检查两个 tile 的矩阵输出
   - 二次注入检查两个 tile 同时翻倍
+
+- `tb_npu_csr_if.v`
+  - 检查 `CAPABILITY/VERSION` 常量寄存器
+  - 检查 `MODE/SRC/DST/DIM/QNT/CORE/POWER` 配置寄存器写回
+  - 检查 `start/soft_reset` 的 `W1P`
+  - 检查 `done/error/irq_pending` 的 `W1C`
+  - 检查 `ERR_CODE/PERF_*` 镜像读出
 
 ## 4. 一键仿真（推荐）
 
@@ -92,6 +111,8 @@ vivado -source .\picorv32-main\picorv32-main\sim\NPU\run_vivado_npu_cluster.tcl 
 - `run:npu:iverilog:one-click:wave`
 - `run:npu:cluster:iverilog:one-click`
 - `run:npu:cluster:iverilog:one-click:wave`
+- `run:npu:csr:iverilog:one-click`
+- `run:npu:csr:iverilog:one-click:wave`
 - `run:npu:vivado:one-click:batch`
 - `run:npu:vivado:one-click:gui`
 - `run:npu:cluster:vivado:one-click:batch`
@@ -103,4 +124,3 @@ vivado -source .\picorv32-main\picorv32-main\sim\NPU\run_vivado_npu_cluster.tcl 
 - 接入 `npu_acc_bias_act_quant`（偏置/激活/量化）
 - 将 `npu_core_cluster` 接入 SoC 控制面（AXI-Lite CSR + IRQ）
 - 增加 perf counter（MAC/cycle、带宽利用率）用于赛题指标打分
-

@@ -22,5 +22,8 @@
     "*.md": "markdown",
     "*.S": "cpp",
     "*.s": "cpp"
+  },
+  "files.watcherExclude": {
+    "**/target": true
   }
 }
