@@ -5,6 +5,9 @@
       "label": "npu:sim:check-tools",
       "type": "shell",
       "command": "iverilog -V; vvp -V",
+      "linux": {
+        "command": "bash -lc 'if command -v iverilog >/dev/null 2>&1 && command -v vvp >/dev/null 2>&1; then iverilog -V; vvp -V; else \"$HOME/.local/micromamba/envs/fpga-sim/bin/iverilog\" -V; \"$HOME/.local/micromamba/envs/fpga-sim/bin/vvp\" -V; fi'"
+      },
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
@@ -14,6 +17,9 @@
       "label": "run:npu:iverilog:one-click",
       "type": "shell",
       "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu.ps1",
+      "linux": {
+        "command": "bash sim/NPU/run_iverilog_npu.sh"
+      },
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
@@ -27,6 +33,9 @@
       "label": "run:npu:iverilog:one-click:wave",
       "type": "shell",
       "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu.ps1 -Wave",
+      "linux": {
+        "command": "bash sim/NPU/run_iverilog_npu.sh --wave"
+      },
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
@@ -37,6 +46,9 @@
       "label": "run:npu:cluster:iverilog:one-click",
       "type": "shell",
       "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu_cluster.ps1",
+      "linux": {
+        "command": "bash sim/NPU/run_iverilog_npu_cluster.sh"
+      },
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
@@ -47,10 +59,75 @@
       "label": "run:npu:cluster:iverilog:one-click:wave",
       "type": "shell",
       "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu_cluster.ps1 -Wave",
+      "linux": {
+        "command": "bash sim/NPU/run_iverilog_npu_cluster.sh --wave"
+      },
       "options": {
         "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
       },
       "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:csr:iverilog:one-click",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu_csr.ps1",
+      "linux": {
+        "command": "bash sim/NPU/run_iverilog_npu_csr.sh"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:csr:iverilog:one-click:wave",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File sim/NPU/run_iverilog_npu_csr.ps1 -Wave",
+      "linux": {
+        "command": "bash sim/NPU/run_iverilog_npu_csr.sh --wave"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:wave:open",
+      "type": "shell",
+      "command": "gtkwave \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_core_tile_4x4.vcd\"",
+      "linux": {
+        "command": "bash -lc 'if command -v gtkwave >/dev/null 2>&1; then gtkwave \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_core_tile_4x4.vcd\"; else \"$HOME/.local/micromamba/envs/fpga-sim/bin/gtkwave\" \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_core_tile_4x4.vcd\"; fi'"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:csr:wave:open",
+      "type": "shell",
+      "command": "gtkwave \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_csr_if.vcd\"",
+      "linux": {
+        "command": "bash -lc 'if command -v gtkwave >/dev/null 2>&1; then gtkwave \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_csr_if.vcd\"; else \"$HOME/.local/micromamba/envs/fpga-sim/bin/gtkwave\" \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_csr_if.vcd\"; fi'"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run:npu:cluster:wave:open",
+      "type": "shell",
+      "command": "gtkwave \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_core_cluster.vcd\"",
+      "linux": {
+        "command": "bash -lc 'if command -v gtkwave >/dev/null 2>&1; then gtkwave \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_core_cluster.vcd\"; else \"$HOME/.local/micromamba/envs/fpga-sim/bin/gtkwave\" \"${workspaceFolder}/picorv32-main/picorv32-main/tb_npu_core_cluster.vcd\"; fi'"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/picorv32-main/picorv32-main"
+      },
       "problemMatcher": []
     },
     {

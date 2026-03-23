@@ -1,77 +1,141 @@
-﻿椋炶吘浼佷笟鍛介璇存槑
-<w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:spacing w:before="300"/><w:ind w:left="0" w:leftChars="0" w:firstLine="0" w:firstLineChars="0"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="榛戜綋" w:hAnsi="榛戜綋" w:eastAsia="榛戜綋" w:cs="榛戜綋"/><w:b w:val="0"/><w:bCs/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="榛戜綋" w:hAnsi="榛戜綋" w:eastAsia="榛戜綋" w:cs="榛戜綋"/><w:b w:val="0"/><w:bCs/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>椋炶吘鍒涜姱澶ц禌浜烘墠鎷涜仒鏀跨瓥
-鑾峰叏鍥戒簩绛夊
+飞腾企业命题说明
+飞腾企业命题专项奖系针对初赛阶段设立的独立奖项，旨在表彰选择并攻关飞腾命题的优秀团队。该奖项由企业技术专家组评审，与大赛决赛奖项评选机制并行。入围决赛的团队将继续角逐大赛总决赛奖项，两类奖项互不冲突，获奖权益可叠加享受。
+鉴于飞腾赛题一（3D芯片中TSV的热应力和机械应力物理建模与可靠性仿真）对创新性要求更高，评选企业专项奖时，同等条件下选择专用题的赛队优先。未能达到赛题基本要求的作品不参与评奖。
+飞腾企业命题专项奖设置
+一等奖3队，每队奖金1万元；
+二等奖6队，每队奖金0.5万元。
+飞腾创芯大赛人才招聘政策
+获全国二等奖、三等奖学生，可以免笔试；全国一等奖学生，获得HR直通卡，直达专业终面。飞腾专项奖等级等同全国奖对应等级待遇。
+飞腾企业命题交流QQ群
 1077142513
+组队报名及作品提交链接（创芯大赛官网）
 https://cpipc.acge.org.cn/cw/hp/10
-<w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid w:val="0"/><w:spacing w:before="0" w:line="240" w:lineRule="auto"/><w:jc w:val="left"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="default"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>璧涢涓€锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia"/></w:rPr><w:t>3D鑺墖涓璗SV
-璧涢鑳屾櫙
-闅忕潃鎽╁皵瀹氬緥璧板悜鍋滄粸锛岃姱鐗囩殑涓夌淮闆嗘垚鎴愪负杩涗竴姝ユ彁鍗囪姱鐗囩畻鍔涚殑涓昏閫斿緞銆傜劧鑰岋紝瀵逛簬鍩轰簬TSV宸ヨ壓鍜屽悓璐?寮傝川鑺矑閿悎鐨?D鑺墖鑰岃█锛岀敱鑺墖鍔熺巼鑰楁暎浜х敓鐑簲鍔涘拰鏈烘搴斿姏锛屽苟鍙兘瀵艰嚧TSV
-鍥犳锛屽鍩轰簬TSV宸ヨ壓鍜屽悓璐?寮傝川鑺矑閿悎鐨?D 鑺墖鑰岃█锛岄渶瑕佸缓绔嬭姱鐗囦腑TSV缁撴瀯鐨勭儹-鏈烘搴斿姏鐗╃悊瀛﹁В鏋愭ā鍨嬶紝骞朵娇鐢ㄨ妯″瀷瀵圭粰瀹氱殑TSV鍙傛暟锛堝寘鎷嚑浣曞昂瀵搞€佹潗鏂欏弬鏁般€佸姩鎬佽繍琛屽弬鏁扮瓑锛夊TSV
-璧涢鐩爣
-涓哄疄鐜癟SV鍜屽悓璐?寮傝川鑺矑閿悎宸ヨ壓鏉′欢涓?D鑺墖鐨勫叏鑺墖鐑?鏈烘搴斿姏浠跨湡锛岃棰樺簲褰撳畬鎴愪互涓嬬爺绌跺唴瀹癸細
-1.寤虹珛鍙傛暟鍖栫殑鑺墖鐑簲鍔涘拰鏈烘搴斿姏鐗╃悊瀛﹁В鏋愭ā鍨嬶紝妯″瀷鍙敮鎸佷笉鍚屽伐鑹哄弬鏁板拰鑺墖鍔熻€楃壒寰佷笅鐨凾SV
-2.瀵规墍鎻愬嚭鐨勭儹搴斿姏鐗╃悊瀛﹁В鏋愭ā鍨嬭繘琛岀畻娉曞疄鐜帮紝骞跺鍏跺仛骞惰鍖栦紭鍖栵紝浠ュ疄鐜癟SV缁撴瀯鐨勭儹搴斿姏浠跨湡妯℃嫙鍣紱
-3.鍦ㄨ姱鐗囧姩鎬佸姛鑰楁暟鎹綔涓鸿緭鍏ュ弬鏁扮殑鏉′欢涓嬶紝鍒嗘瀽鍜岀爺绌?D-
-<w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:ind w:firstLine="474" w:firstLineChars="200"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="eastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr><w:t>https://edu.phytium.com.cn/course/99/task/249/show
-<w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:ind w:firstLine="474" w:firstLineChars="200"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="eastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr><w:t>https://edu.phytium.com.cn/course/99/task/248/show
-1. 鎻愬嚭鍙傛暟鍖栫殑3D-TSV缁撴瀯鐨勭儹搴斿姏鐗╃悊瀛﹁В鏋愭ā鍨嬶紝瑕佹眰鐑簲鍔涗豢鐪熺簿搴︿笉浣庝簬TCAD浠跨湡宸ュ叿绮惧害鐨?9%
-2. 鏍规嵁鎵€鎻愬嚭鐨勭墿鐞嗗妯″瀷锛屽疄鐜?D-TSV鑺墖鐨勭儹搴斿姏鍜屾満姊板簲鍔涗豢鐪熸ā鎷熷櫒杞欢锛岃姹傦細
-a) 浠跨湡閫熷害搴旇揪鍒癟CAD浠跨湡杞欢鐨?0鍊嶄互涓婏紱
-b) 鏀寔涓嶅悓鐨?/w:t></w:r><w:r><w:rPr><w:rStyle w:val="12"/><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/><w:color w:val="0A0A0A"/><w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/></w:rPr><w:t>鍑犱綍缁撴瀯鍙傛暟锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/><w:color w:val="0A0A0A"/><w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/></w:rPr><w:t>濡俆SV鐩村緞/灏哄銆?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/><w:color w:val="0A0A0A"/><w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/></w:rPr><w:t>鏅跺渾鍘氬害銆佸皝瑁呯粨鏋勶級鍜岃姱鐗囧姛鑰楀弬鏁帮紙濡傝姱鐗?/w:t></w:r><w:r><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/><w:color w:val="0A0A0A"/><w:shd w:val="clear" w:color="auto" w:fill="FFFFFF"/></w:rPr><w:t>鍔熺巼瀵嗗害銆佺幆澧冩俯搴?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:color w:val="000000" w:themeColor="text1"/><w14:textFill><w14:solidFill><w14:schemeClr w14:val="tx1"/></w14:solidFill></w14:textFill></w:rPr><w:t>锛夎緭鍏ワ紱
-c) 鏀寔鐑簲鍔涘拰鏈烘搴斿姏鏃堕棿婕斿寲寰嬩豢鐪燂紱
-d)
-1. 鍔熻兘瀹炵幇绮惧噯鏃犺锛屼笌棰樼洰瑕佹眰楂樺害濂戝悎锛涳紙10鍒嗭級
-2. 璁捐鏂规鏂囨。琛ㄨ堪娓呮櫚锛屾ā鍧楀姛鑳藉垝鍒嗙瀛﹀悎鐞嗭紱锛?0鍒嗭級
-3. 鏂囨。鏄庣‘闃愰噴妯″潡鍐呴儴閲忓寲鎸囨爣鍙婄浉搴旂殑鎬ц兘鍒嗘瀽锛涳紙20鍒嗭級
-4. 闇€鍏峰瀹屽杽鐨勯獙璇佹柟妗堜笌楠岃瘉鐢ㄤ緥锛涳紙20鍒嗭級
-5. 鍦ㄥ悓绛夎緭鍏ュ弬鏁版潯浠朵笅锛屾ā鍨嬬殑杩愯閫熷害瓒婇珮銆佽宸秺浣庯紝鎵€鑾峰垎鏁拌秺楂橈紱妯″瀷鐨勮繍琛岄€熷害鍜岃宸簿搴︽寚鏍囧潎鍩轰簬鎵€鏈夊弬璧涘洟闃熷湪鍚勪笓椤圭殑褰掍竴鍖栧垎鏁拌繘琛岀粺璁★紝浜岃€呮潈閲嶅悇鍗?0鍒嗭紝浠ュ悇涓撻」鎺掑悕绗竴鑰呬负婊″垎锛?0鍒嗭級銆佹渶鏈€呬负0鍒嗭紙鏈畬鎴愯€呬笉璁″垎銆佷笉鍙備笌鎺掑悕锛夛紝涓棿鎴愮哗鑰呬互瀹為檯杩愯閫熷害鍜岃宸簿搴︽寜瀵规暟鍏崇郴鏄犲皠锛屽嵆:
-鍏朵腑S琛ㄧず鍚勪笓椤圭殑缁濆鏁板€硷紝
+注：具体报名时间、参赛流程及赛题详情，请以大赛组委会后续发布的正式通知为准。
+赛题一：3D芯片中TSV的热应力和机械应力物理建模与可靠性仿真
+赛题背景
+随着摩尔定律走向停滞，芯片的三维集成成为进一步提升芯片算力的主要途径。然而，对于基于TSV工艺和同质/异质芯粒键合的3D芯片而言，由芯片功率耗散产生热应力和机械应力，并可能导致TSV结构产生损伤，进而影响芯片的功能和寿命。
+因此，对基于TSV工艺和同质/异质芯粒键合的3D 芯片而言，需要建立芯片中TSV结构的热-机械应力物理学解析模型，并使用该模型对给定的TSV参数（包括几何尺寸、材料参数、动态运行参数等）对TSV结构的热-机械应力场分布进行仿真分析，以评估对芯片的功能和寿命所产生的影响。
+赛题目标
+为实现TSV和同质/异质芯粒键合工艺条件下3D芯片的全芯片热-机械应力仿真，课题应当完成以下研究内容：
+1.建立参数化的芯片热应力和机械应力物理学解析模型，模型可支持不同工艺参数和芯片功耗特征下的TSV热应力和机械应力仿真；
+2.对所提出的热应力物理学解析模型进行算法实现，并对其做并行化优化，以实现TSV结构的热应力仿真模拟器；
+3.在芯片动态功耗数据作为输入参数的条件下，分析和研究3D-TSV、键合的热应力时间演化律，并完成算法实现。
+出题方为参赛队伍提供：
+【TSV结构说明】
+https://edu.phytium.com.cn/course/99/task/249/show
+【pu_cpm_model】
+https://edu.phytium.com.cn/course/99/task/248/show
+交付内容及要求
+1. 提出参数化的3D-TSV结构的热应力物理学解析模型，要求热应力仿真精度不低于TCAD仿真工具精度的99%以上；
+2. 根据所提出的物理学模型，实现3D-TSV芯片的热应力和机械应力仿真模拟器软件，要求：
+a) 仿真速度应达到TCAD仿真软件的10倍以上；
+b) 支持不同的几何结构参数（如TSV直径/尺寸、晶圆厚度、封装结构）和芯片功耗参数（如芯片功率密度、环境温度）输入；
+c) 支持热应力和机械应力时间演化律仿真；
+d) 开放源代码，或者提供静态/动态运行时库以及API接口以支持二次开发。
+评审要点：
+1. 功能实现精准无误，与题目要求高度契合；（10分）
+2. 设计方案文档表述清晰，模块功能划分科学合理；（10分）
+3. 文档明确阐释模块内部量化指标及相应的性能分析；（20分）
+4. 需具备完善的验证方案与验证用例；（20分）
+5. 在同等输入参数条件下，模型的运行速度越高、误差越低，所获分数越高；模型的运行速度和误差精度指标均基于所有参赛团队在各专项的归一化分数进行统计，二者权重各占50分，以各专项排名第一者为满分（50分）、最末者为0分（未完成者不计分、不参与排名），中间成绩者以实际运行速度和误差精度按对数关系映射，即:
+N=50∗lnSSminlnSmaxSmin
+其中S表示各专项的绝对数值，Smax和Smin代表对应的最大值和最小值。
+本赛题答疑邮箱：
 zhangyouzhi1859@phytium.com.cn
-璧涢浜岋細AI瓒呭垎杈ㄧ巼
-璧涢鑳屾櫙
-杩滅▼鍔炲叕銆佸湪绾挎暀鑲茬殑甯告€佸寲鎺ㄥ姩瑙嗛浼氳甯傚満鐖嗗彂寮忓闀匡紝浣嗗急缃戠幆澧冧笅鐨勪綆鐮佺巼鍘嬬缉銆佺敾闈㈡ā绯婏紙浜鸿劯銆佸叡浜枃妗ｆ枃瀛楀け鐪燂級銆佸疄鏃舵€т笉瓒崇瓑闂锛屼弗閲嶅埗绾︽矡閫氭晥鐜囥€備紶缁熸彃鍊肩畻娉曢毦浠ユ仮澶嶇粏鑺傦紝鑰屾繁搴﹀涔犺秴鍒嗘ā鍨嬭櫧鏁堟灉浼樺紓锛屽嵈鍥犲弬鏁伴噺澶с€佽绠楀鏉傦紝鍦ㄧ瑪璁版湰銆佸钩鏉跨瓑绔晶璁惧涓婇潰涓村疄鏃舵€т笌鍔熻€楃殑鍙岄噸鍘嬪姏锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>闅句互婊¤冻
-鍥犳锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="default"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>鑱氱劍瑙嗛浼氳鏍稿績鐥涚偣锛岃姹傝璁I瓒呭垎纭欢鍔犻€熷櫒锛氶€氳繃妯″瀷杞婚噺鍖栦笌纭欢鏋舵瀯鍒涙柊锛屽湪淇濋殰瓒呭垎鏁堟灉
-璧涢鐩爣
-AI妯″瀷銆侀噺鍖栥€佺█鐤忓寲鏂规硶涓嶅仛绾︽潫锛屽浘鍍忚緭鍏ユ牸寮?RGB or YUV)涓嶉檺锛孉I妯″瀷鍙弬鑰僀VPR NTIRE鐩稿叧璁烘枃
-閫傞厤浼氳鐢婚潰鏍稿績鐗瑰緛锛堜汉鍍忋€佹枃妗ｇ瓑锛夛紝瀹炵幇瀹炴椂銆侀珮淇濈湡鐨勮秴鍒嗚鲸鐜囪緭鍑猴紱
-鍩轰簬Xilinx ZC706 FPGA鎴栬€呰祫婧愮浉褰撶殑FPGA锛屽湪鎵€鎻愪緵鏁版嵁闆嗗悎涓婂疄鐜皒2銆亁4瓒呭垎
-<w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:ind w:firstLine="474" w:firstLineChars="200"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr><w:t>銆愭暟鎹泦銆慼ttps://seungjunnah.github.io/Datasets/reds.html
-<w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:ind w:firstLine="474" w:firstLineChars="200"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman"/><w:lang w:val="en-US" w:eastAsia="zh"/><w:woUserID w:val="1"/></w:rPr><w:t>鍙傝禌浣跨敤鏁版嵁闆嗕负REDS鏁版嵁闆嗭紝鍏充簬REDS鏁版嵁闆嗙殑浠嬬粛璇﹁璁烘枃锛歋. Nah et al., "NTIRE 2019 Challenge on Video Deblurring and Super-Resolution: Dataset and Study"
-鎻愪緵纭欢鍔犻€熷櫒鐨勬簮浠ｇ爜锛屽彲鍦╔ilinx Vivado宸ュ叿涓繘琛屼豢鐪熼獙璇佷互鍙婄患鍚堢敤浜庤瘎浼拌祫婧愬紑閿€
-鍔熻兘瀹炵幇绮惧噯鏃犺锛屼笌棰樼洰瑕佹眰楂樺害濂戝悎锛?0锛夛紱
-璁捐鏂规鏂囨。琛ㄨ堪娓呮櫚锛屾ā鍧楀姛鑳藉垝鍒嗙瀛﹀悎鐞嗭紙10锛夛紱
-鏂囨。鏄庣‘闃愰噴妯″潡鍐呴儴閲忓寲鎸囨爣鍙婄浉搴旂殑鎬ц兘鍒嗘瀽锛?0锛夛紱
-闇€鍏峰瀹屽杽鐨勯獙璇佹柟妗堜笌楠岃瘉鐢ㄤ緥锛?0锛夛紱
+赛题二：AI超分辨率模型高效硬件加速器设计与实现
+赛题背景
+远程办公、在线教育的常态化推动视频会议市场爆发式增长，但弱网环境下的低码率压缩、画面模糊（人脸、共享文档文字失真）、实时性不足等问题，严重制约沟通效率。传统插值算法难以恢复细节，而深度学习超分模型虽效果优异，却因参数量大、计算复杂，在笔记本、平板等端侧设备上面临实时性与功耗的双重压力，难以满足视频会议场景需求。
+因此，聚焦视频会议核心痛点，要求设计AI超分硬件加速器：通过模型轻量化与硬件架构创新，在保障超分效果的同时，实现低延迟、低功耗实时处理，破解“高清与实时”矛盾，为远程交互提供优质视觉体验，兼具技术创新性与工程落地性。
+赛题目标
+面向端侧场景，设计专用的AI超分硬件加速器实现“清晰度-实时性-功耗”之间的平衡，加速器设计约束：
+AI模型、量化、稀疏化方法不做约束，图像输入格式(RGB or YUV)不限，AI模型可参考CVPR NTIRE相关论文
+适配会议画面核心特征（人像、文档等），实现实时、高保真的超分辨率输出；
+基于Xilinx ZC706 FPGA或者资源相当的FPGA，在所提供数据集合上实现x2、x4超分
+验证方案在实际视频会议场景下的画质与性能表现。
+出题方为参赛队伍提供：
+【数据集】https://seungjunnah.github.io/Datasets/reds.html
+参赛使用数据集为REDS数据集，关于REDS数据集的介绍详见论文：S. Nah et al., "NTIRE 2019 Challenge on Video Deblurring and Super-Resolution: Dataset and Study"
+交付内容及要求
+提供AI模型结构、训练、量化的说明文档及源代码，以及模型到硬件加速器指令的转换工具
+提供硬件加速器的详细设计文档
+提供硬件加速器的源代码，可在Xilinx Vivado工具中进行仿真验证以及综合用于评估资源开销
+评审要点：
+功能实现精准无误，与题目要求高度契合（10）；
+设计方案文档表述清晰，模块功能划分科学合理（10）；
+文档明确阐释模块内部量化指标及相应的性能分析（20）；
+需具备完善的验证方案与验证用例（20）；
+在同等性能约束条件下，模块面积越小、功耗越低，所获分数越高（40，若未通过正确性仿真验证以及生成bitstream，此项得分为0）；PPA 指标均基于所有参赛团队在各专项的归一化分数进行统计。
+本赛题答疑邮箱：
 zhangyouzhi1859@phytium.com.cn
-璧涢涓夛細鏅烘牳铻嶅悎 路 浣庤€楀己绠椻€斺€?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia"/></w:rPr><w:t>鍩轰簬CPU鍜?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia"/></w:rPr><w:t>NPU鐨勫紓鏋勫鐞嗗櫒璁捐
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:shd w:val="clear"/><w:kinsoku/><w:wordWrap/><w:overflowPunct/><w:topLinePunct w:val="0"/><w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:spacing w:before="210" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="0" w:right="0" w:firstLine="474" w:firstLineChars="200"/><w:jc w:val="both"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="eastAsia" w:eastAsia="瀹嬩綋"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t>鍏稿瀷搴旂敤鍦烘櫙濡備笅锛氬湪鏅鸿兘瀹跺眳棰嗗煙锛岄棬閿佸叿澶囨湰鍦板寲浜鸿劯璇嗗埆鍔熻兘锛堝搷搴旀椂闂村皬浜?00姣锛夛紱鍦ㄥ伐涓氭娴嬮鍩燂紝鍙繘琛岀己闄锋娴嬶紙绮惧害涓嶄綆浜?9.5%锛屽悶鍚愰噺杈?0甯?绉掞級锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t>鍦?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t xml:space="preserve">鍙┛鎴磋澶囬鍩燂紝鑳藉疄鐜板疄鏃跺績鐢靛浘鍒嗘瀽锛堝姛鑰楀皬浜?0姣摝锛岀画鑸兘鍔涙彁鍗?鍊嶏級銆?
-浜屻€佺洰鐨勪笌鎰忎箟
-鐩殑
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:spacing w:before="90" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="0" w:leftChars="0" w:right="0" w:firstLine="420" w:firstLineChars="0"/><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr></w:pPr><w:r><w:rPr><w:rStyle w:val="12"/><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:b/><w:bCs/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr><w:t>鑳芥晥浼樺寲
-鎰忎箟
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:spacing w:before="0" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="0" w:leftChars="0" w:right="0" w:firstLine="420" w:firstLineChars="0"/><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr></w:pPr><w:r><w:rPr><w:rStyle w:val="12"/><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:b/><w:bCs/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr><w:t>濉ˉ甯傚満绌虹櫧
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:spacing w:before="90" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="0" w:leftChars="0" w:right="0" w:firstLine="420" w:firstLineChars="0"/><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr></w:pPr><w:r><w:rPr><w:rStyle w:val="12"/><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:b/><w:bCs/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr><w:t>鎺ㄥ姩杈圭紭AI鏅強
-涓夈€佽璁℃寚鏍囦笌瑕佹眰
-锛堜竴锛夊熀纭€瀹屾垚鎸囨爣
-1銆佸紓鏋勫鐞嗗櫒闆嗘垚
-3銆佹€ц兘娴嬭瘯
-1銆佸紓鏋勫鐞嗗櫒鎬ц兘浼樺寲
-锛堜笁锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="default"/><w:color w:val="auto"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>杈撳嚭瑕佹眰
-璇︾粏璁捐鏂囨。鍙?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>RTL
-鍥涖€侀獙璇佷笌娴嬭瘯瑕佹眰
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:spacing w:before="0" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="820" w:leftChars="0" w:right="0" w:rightChars="0" w:hanging="400" w:firstLineChars="0"/><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>鍩烘湰瑕佹眰锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr><w:t>瀹屾垚
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:spacing w:before="0" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="820" w:leftChars="0" w:right="0" w:rightChars="0" w:hanging="400" w:firstLineChars="0"/><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>鍔犲垎椤癸細瀹屾垚FPGA楠岃瘉
-2銆佹€ц兘娴嬭瘯
-鍔熻兘
-瀹炵幇4脳4鑴夊姩闃靛垪锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>20鍒?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>鎴栬€呭疄鐜?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/></w:rPr><w:t>鍔ㄦ€佸彲璋冭剦鍔ㄩ樀鍒?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>25鍒?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>锛夛紱
-AXI鍏变韩鎬荤嚎浜掕繛鎷撴墤缁撴瀯锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>5鍒?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>锛夛紱
-DMA鎺у埗鍣?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>5鍒?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:eastAsiaTheme="minorEastAsia"/><w:bCs/><w:color w:val="auto"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>锛夛紱
-浣庡姛鑰楄璁★紙闂ㄦ帶鏃堕挓銆丏FS绛夛級
-缁撹
-<w:left w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:bottom w:val="none" w:color="auto" w:sz="0" w:space="0"/><w:right w:val="none" w:color="auto" w:sz="0" w:space="0"/></w:pBdr><w:shd w:val="clear"/><w:kinsoku/><w:wordWrap/><w:overflowPunct/><w:topLinePunct w:val="0"/><w:autoSpaceDE/><w:autoSpaceDN/><w:bidi w:val="0"/><w:adjustRightInd/><w:snapToGrid/><w:spacing w:before="0" w:beforeAutospacing="0" w:after="0" w:afterAutospacing="0" w:line="26" w:lineRule="atLeast"/><w:ind w:left="0" w:right="0" w:firstLine="474" w:firstLineChars="200"/><w:textAlignment w:val="auto"/><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr><w:t>鏈柟妗堥€氳繃32浣嶄綆鍔熻€桼ISC澶勭悊鍣ㄤ笌32浣峃PU鐨勫紓鏋勮瀺鍚堬紝缁撳悎AXI鎬荤嚎鐨勯珮鏁堥€氫俊锛屼负浣庡姛鑰?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>銆?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr><w:t>浣庢垚鏈?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="default" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/></w:rPr><w:t>AI杈圭紭璁＄畻鎻愪緵浜嗗彲閲忎骇鐨勮В鍐虫柟妗堛€傞」鐩洟闃熷皢鑱氱劍鑳芥晥姣斾紭鍖栦笌鐢熸€佸吋瀹规€э紝鍔╁姏瀹㈡埛鍦ㄤ竾鐗?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>浜掕繛
+赛题三：智核融合 · 低耗强算——基于CPU和NPU的异构处理器设计
+一、背景
+随着物联网（IoT）、人工智能（AI）和边缘计算的飞速发展，对于低功耗、高性能异构计算的需求愈发紧迫。传统CPU在处理复杂AI算法时，面临着算力不足和能效比低下的双重难题，而专用NPU（神经网络处理器）虽可高效执行矩阵运算，但缺乏通用控制能力。通常情况下，32位低功耗RISC处理器，凭借其超低能耗和较高运算效率，在智能传感器、可穿戴设备等领域处于主导地位。然而，其单核性能有限，难以满足实时AI推理需求。
+在此情形下，32位低功耗RISC处理器 + 32位NPU的异构架构成为解决问题的关键所在：通过AXI总线实现CPU与NPU的高效协同，既保留了32位低功耗RISC处理器的低功耗控制优势，又借助NPU的并行计算能力提升了整体能效。据行业数据显示，采用异构架构的芯片在图像识别任务中，能效比能够提升10倍以上，同时功耗降低60%。
+典型应用场景如下：在智能家居领域，门锁具备本地化人脸识别功能（响应时间小于200毫秒）；在工业检测领域，可进行缺陷检测（精度不低于99.5%，吞吐量达50帧/秒）；在可穿戴设备领域，能实现实时心电图分析（功耗小于10毫瓦，续航能力提升3倍）。
+二、目的与意义
+目的
+技术突破：设计一款支持AXI总线（含单拍/Burst传输）的异构处理器，实现CPU与NPU的零拷贝数据交互。
+能效优化：通过任务划分（CPU处理逻辑控制，NPU执行矩阵运算），降低整体功耗。
+意义
+填补市场空白：当前低功耗AI芯片市场以单核MCU或高功耗APU为主，异构方案稀缺。
+推动边缘AI普及：在智能家居、工业检测等场景中，实现本地化实时推理，减少云端依赖。
+技术标准制定：通过AXI总线接口的标准化设计，为行业提供可复用的异构通信协议。
+三、设计指标与要求
+（一）基础完成指标
+1、异构处理器集成
+在指定的CPU中设计并集成32位NPU计算单元，采用4×4脉动阵列架构。指定的CPU包括两类：一类是基于Cortex-M0核的CPU；另外一类是基于RISC-V核的CPU。
+实现CPU与NPU通过AXI总线（支持单拍传输AXI-Lite和Burst传输AXI）的高效通信。
+2、功能验证
+完成AXI Burst传输正确性测试（地址递增模式），确保数据传输无误。
+实现CPU与NPU的协同任务，如NPU执行矩阵运算，CPU处理逻辑控制。
+使用VS Code+iverilog联合仿真平台，覆盖至少95%的代码路径，确保功能正确性。
+3、性能测试
+NPU算力达到≥0.5TOPS@INT8（峰值），确保基本AI推理能力。
+总线带宽利用率在Burst传输场景下达到≥60%，保证数据传输效率。
+4、低功耗设计
+实现时钟门控技术，当NPU未使用时关闭脉动阵列时钟，降低静态功耗。
+（二）进一步优化指标
+1、异构处理器性能优化
+NPU算力提升：在基础指标上，进一步优化NPU设计，使其算力尽可能接近或超过1TOPS@INT8（峰值）。
+总线带宽利用率提升：通过优化总线架构和仲裁机制，提高总线带宽利用率，目标达到≥80%（Burst传输场景）。
+2、硬件加速与扩展性
+动态可调脉动阵列：设计动态可调脉动阵列，能够根据任务需求动态调整PE（处理单元）的连接关系，提高阵列的灵活性和计算效率。
+互连拓扑结构：采用AXI共享总线互连拓扑结构，提升系统可用带宽，支持更多主设备和从设备的并行访问。
+DMA控制器集成：在基础指标上，进一步集成DMA控制器，实现数据的高效搬运，减少CPU参与数据传输的开销。
+3、低功耗设计创新
+动态频率调整（DFS）：实现NPU的动态频率调整功能，根据任务负载动态调整工作频率，进一步降低功耗。
+创新低功耗设计：探索并应用其他创新低功耗设计方法，如电源门控、多电压域设计等，以降低整体功耗。
+4、生态兼容性与标准化
+AXI总线接口标准化：通过AXI总线接口的标准化设计，为行业提供可复用的异构通信协议，促进技术普及和生态发展。
+（三）输出要求
+详细设计文档及RTL代码；
+RTL仿真报告或者FPGA验证报告。
+四、验证与测试要求
+1、功能验证
+完成所有基础功能测试，确保异构处理器的基本功能正确无误；进行压力测试和边界条件测试，验证系统的稳定性和鲁棒性。
+基本要求：完成RTL仿真。
+加分项：完成FPGA验证。
+2、性能测试
+使用标准测试集（如MNIST、CIFAR-10等）进行AI推理性能测试，记录推理时间和准确率。
+测量并记录总线带宽利用率、NPU算力等关键性能指标。
+3、低功耗测试
+在不同工作负载下测量系统功耗，验证低功耗设计的有效性。
+评估动态频率调整（DFS）等功能对功耗的影响。
+五、评分规则
+功能实现正确，满足题目要求，要求有完备的验证方案和验证用例：
+实现4×4脉动阵列（20分）或者实现动态可调脉动阵列（25分）；
+AXI共享总线互连拓扑结构（5分）；
+DMA控制器（5分）；
+低功耗设计（门控时钟、DFS等）（5分）；
+设计方案文档描述清晰，模块功能划分合理（10分）；
+性能指标评分以基础完成指标对应的分数为0分基准，进一步优化指标对应的分数为40分，通过线性化处理计算得分，最高可得50分。
+完成FPGA验证可加10分。
+结语
+本方案通过32位低功耗RISC处理器与32位NPU的异构融合，结合AXI总线的高效通信，为低功耗、低成本AI边缘计算提供了可量产的解决方案。项目团队将聚焦能效比优化与生态兼容性，助力客户在万物互连时代抢占技术制高点。
 CPU
-ARM Cortex-M0 RTL婧愮爜涓嬭浇鍦板潃锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:instrText xml:space="preserve"> HYPERLINK "https://www.arm.com/resources/free-evaluation-arm-cpus" </w:instrText></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:rStyle w:val="14"/><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t>https://www.arm.com/resources/free-evaluation-arm-cpus
-RISC-V鏍窻TL婧愮爜鍙傝€冧笅杞藉湴鍧€濡備笅锛堜笅杞?鎷夊彇宸ュ叿涓篻it锛夛細
-PicoRV32锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:tab/></w:r><w:r><w:rPr><w:rFonts w:hint="default" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t>https://github.com/YosysHQ/picorv32.git
-Darkriscv锛?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:tab/></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:tab/></w:r><w:r><w:rPr><w:rFonts w:hint="eastAsia" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t>https://github.com/darklife/darkriscv.git锛堜笉甯XI鎺ュ彛锛屽彲鍙傝€?/w:t></w:r><w:r><w:rPr><w:rFonts w:hint="default" w:cs="Times New Roman" w:eastAsiaTheme="minorEastAsia"/><w:i w:val="0"/><w:iCs w:val="0"/><w:caps w:val="0"/><w:color w:val="auto"/><w:spacing w:val="0"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:shd w:val="clear"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/><w14:glow w14:rad="0"><w14:srgbClr w14:val="000000"/></w14:glow></w:rPr><w:t>PicoRV32
+ARM Cortex-M0 RTL源码下载地址：https://www.arm.com/resources/free-evaluation-arm-cpus
+RISC-V核RTL源码参考下载地址如下（下载/拉取工具为git）：
+PicoRV32：	https://github.com/YosysHQ/picorv32.git（自带AXI4接口）
+Darkriscv：		https://github.com/darklife/darkriscv.git（不带AXI接口，可参考PicoRV32解决）
+本赛题答疑邮箱：
 zhangyouzhi1859@phytium.com.cn

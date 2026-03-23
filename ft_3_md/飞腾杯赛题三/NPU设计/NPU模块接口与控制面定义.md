@@ -1,6 +1,6 @@
 # NPU模块接口与控制面定义（达标实现版）
 
-更新时间：`2026-03-22`
+更新时间：`2026-03-23`
 
 ## 1. 文档目标
 
@@ -187,6 +187,14 @@ module npu_ctrl_top (
 ## 7. 控制面子模块接口（逐端口）
 
 ## 7.1 `npu_csr_if`
+
+当前实现状态：
+
+- 已落地 RTL：`picorv32-main/picorv32-main/HDL_src/NPU_design/npu_csr_if.v`
+- 已实现寄存器范围：`0x00 ~ 0x50`
+- 已实现 `CAPABILITY=32'h0000_003F`
+- 已实现 `VERSION=32'h2026_0323`
+- `busy` 时重复 `start` 的报错动作仍由 `npu_cmd_ctrl` 消费 `cfg_start_pulse_o` 后完成，本模块不直接改写 `status/error`
 
 ```verilog
 module npu_csr_if (
@@ -395,4 +403,3 @@ BW\_util = \frac{PERF\_DMA\_DATA\_CYC}{PERF\_DMA\_WIN\_CYC}
 - 参数非法 -> 对应错误码。
 - PERF 计数器在任务期间递增、soft_reset 后清零。
 - irq enable/disable 两条路径行为一致。
-

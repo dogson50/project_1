@@ -1,6 +1,10 @@
-# NPU Tile 仿真说明
+# NPU 仿真说明
 
-本目录用于仿真 `HDL_src/NPU_design/npu_core_tile_4x4.v`。
+本目录用于仿真 NPU 主线 RTL，当前包含：
+
+- `HDL_src/NPU_design/npu_core_tile_4x4.v`
+- `HDL_src/NPU_design/npu_core_cluster.v`
+- `HDL_src/NPU_design/npu_csr_if.v`
 
 ## 文件
 
@@ -12,6 +16,10 @@
 - `filelist_npu_cluster.f`：cluster 的 iverilog 文件列表
 - `run_iverilog_npu_cluster.ps1`：cluster Icarus 一键仿真脚本
 - `run_vivado_npu_cluster.tcl`：cluster Vivado/XSim 一键仿真脚本
+- `tb_npu_csr_if.v`：CSR 接口自检 testbench
+- `filelist_npu_csr.f`：CSR 的 iverilog 文件列表
+- `run_iverilog_npu_csr.ps1`：CSR Icarus 一键仿真脚本
+- `run_iverilog_npu_csr.sh`：CSR Linux 一键仿真脚本
 
 ## 一键命令
 
@@ -65,4 +73,30 @@ vivado -mode batch -source .\picorv32-main\picorv32-main\sim\NPU\run_vivado_npu_
 
 ```powershell
 vivado -source .\picorv32-main\picorv32-main\sim\NPU\run_vivado_npu_cluster.tcl -tclargs gui
+```
+
+## npu_csr_if 一键命令
+
+### 1) Icarus Verilog（Windows PowerShell）
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\picorv32-main\picorv32-main\sim\NPU\run_iverilog_npu_csr.ps1
+```
+
+带波形导出（VCD）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\picorv32-main\picorv32-main\sim\NPU\run_iverilog_npu_csr.ps1 -Wave
+```
+
+### 2) Icarus Verilog（Linux）
+
+```bash
+bash ./picorv32-main/picorv32-main/sim/NPU/run_iverilog_npu_csr.sh
+```
+
+带波形导出（VCD）：
+
+```bash
+bash ./picorv32-main/picorv32-main/sim/NPU/run_iverilog_npu_csr.sh --wave
 ```

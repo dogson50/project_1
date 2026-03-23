@@ -1,6 +1,6 @@
 # NPU子系统模块划分与接口清单（赛题达标版）
 
-更新时间：`2026-03-22`
+更新时间：`2026-03-23`
 
 ## 1. 结论先行
 
@@ -157,6 +157,14 @@ module npu_subsys_v2 #(
 - AXI-Lite 寄存器终端
 - 输出任务参数和低功耗配置
 - 产生 `start/soft_reset`（W1P）与 `W1C` 清除请求
+
+### 当前实现状态
+
+- 已落地 RTL：`picorv32-main/picorv32-main/HDL_src/NPU_design/npu_csr_if.v`
+- 已实现冻结版 CSR 地址映射：`0x00 ~ 0x50`
+- 已实现 `CAPABILITY=32'h0000_003F`
+- 已实现 `VERSION=32'h2026_0323`
+- `status_* / err_code / PERF_*` 当前按镜像输入只读，`W1C` 通过清除脉冲输出给后级状态机消费
 
 ### 端口定义（逐端口）
 
@@ -651,4 +659,3 @@ module npu_clk_dfs_ctrl (
 2. 先做 `CORE_NUM=1` 功能闭环，验证完整链路。  
 3. 再升到 `CORE_NUM>1` 并行，加入调度和统计。  
 4. 最后冲刺 `CORE_NUM*SIMD` 达标并做带宽利用率优化。  
-
